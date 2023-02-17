@@ -1,0 +1,26 @@
+{
+  "name": "vue-demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "vite build --mode prod",
+    "test": "vite --mode test",
+    "uat": "vite --mode uat",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "js-confetti": "^0.11.0",
+    "lodash-es": "^4.17.21",
+    "marked": "^4.2.12",
+    "pinia": "^2.0.28",
+    "vue": "^3.2.45",
+    "axios": "^1.3.3",
+    "mitt": "^3.0.0",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
+  }
+}
