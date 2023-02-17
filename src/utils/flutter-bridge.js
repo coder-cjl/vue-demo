@@ -3,10 +3,6 @@ export default  {
         window[name].postMessage(data)
     },
 
-    flutter_register(name, data) {
-
-    },
-
     flutter_close(data = '') {
         window['close'].postMessage(data)
     }

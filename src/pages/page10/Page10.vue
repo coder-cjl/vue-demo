@@ -15,6 +15,10 @@
   <br>
   <br>
   <button v-show="isShow">{{buttonName}}</button>
+  <br>
+  <br>
+  <button class="bt1" @click="testEventBus">测试EventBus - emit</button>
+  <Page12></Page12>
 </template>
 
 <script setup>
@@ -22,7 +26,9 @@
 import {router} from "@/router";
 import {onMounted, ref} from "vue";
 import bridge from "@/utils/bridge";
-import flutter_bridge from "@/utils/flutter_bridge";
+import flutter_bridge from "@/utils/flutter-bridge";
+import Page12 from "@/pages/demo12/Page12.vue";
+import bus from "@/utils/event-bus";
 
 const isShow = ref(false)
 const buttonName = ref('')
@@ -32,6 +38,15 @@ onMounted(() => {
   window.document.title = 'demo1'
   window.demo4 = demo4
 })
+
+bus.on('test2', (e) => {
+  console.log('bus test2 success')
+})
+
+function testEventBus() {
+  // bus.emit('test1', {msg: 'hello'})
+  router.push('/page11')
+}
 
 function register() {
   bridge.registerHandler("demo1", (data, callback) => {
