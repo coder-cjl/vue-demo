@@ -1,24 +1,27 @@
 <template>
-  <button class="bt1" @click="toPage11">TO Page 11</button>
-  <br>
-  <br>
-  <button class="bt1" @click="callAppFunc1">app - 下个页面</button>
-  <br>
-  <br>
-  <button class="bt1" @click="close">关闭页面</button>
-  <br>
-  <br>
-  <button class="bt1" @click="callAppFunc1">app - 弹框</button>
-  <br>
-  <br>
-  <button class="bt1" @click="demo3">demo3</button>
-  <br>
-  <br>
-  <button v-show="isShow">{{buttonName}}</button>
-  <br>
-  <br>
-  <button class="bt1" @click="testEventBus">测试EventBus - emit</button>
-  <Page12></Page12>
+<!--  <button class="bt1" @click="toPage11">TO Page 11</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <button class="bt1" @click="callAppFunc1">app - 下个页面</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <button class="bt1" @click="close">关闭页面</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <button class="bt1" @click="callAppFunc1">app - 弹框</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <button class="bt1" @click="demo3">demo3</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <button v-show="isShow">{{buttonName}}</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <button class="bt1" @click="testEventBus">测试EventBus - emit</button>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <Page12></Page12>-->
+  <button @click="toPage13">vue-router-路由传参</button>
 </template>
 
 <script setup>
@@ -45,7 +48,13 @@ bus.on('test2', (e) => {
 
 function testEventBus() {
   // bus.emit('test1', {msg: 'hello'})
-  router.push('/page11')
+  router.push('/page11?id=123&name=cjl')
+}
+
+function toPage13() {
+  router.push({name: 'Page13', query: {id: '123', name: 'cjl'}})
+  // router.push('/page13?id=123&name=cjl')
+  // router.push('/page13/123')
 }
 
 function register() {
